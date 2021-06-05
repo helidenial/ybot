@@ -22,6 +22,8 @@ def visit(url, loop, duration=10):
                 print('########################################')
                 print("visited")
             except:
+                if isinstance(driver, WebDriver) != True:
+                    driver.quit()
                 driver = webdriver.Chrome()
     except:
         pass
