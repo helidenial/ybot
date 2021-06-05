@@ -19,7 +19,6 @@ def visit(url, loop, duration=10):
                 driver.get(url)
                 print(url, end=" ")
                 sleep(rand(duration, duration+10))
-                print(driver.page_source)
                 print('########################################')
                 print("visited")
             except:
