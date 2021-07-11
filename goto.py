@@ -17,13 +17,15 @@ def visit(url, loop, duration=10):
         for i in range(loop):
             try:
                 driver.get(url)
+		sleep(2)
+		driver.find_element_by_xpath('//*[@id="movie_player"]/div[25]/div[2]/div[1]/button').click()
                 print(url, end=" ")
                 sleep(rand(duration, duration+10))
                 print('########################################')
                 print("visited")
             except:
                 if isinstance(driver, WebDriver) != True:
-                    driver.quit()
+                driver.quit()
                 driver = webdriver.Chrome()
     except:
         pass
